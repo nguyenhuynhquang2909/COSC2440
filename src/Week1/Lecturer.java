@@ -9,17 +9,21 @@ public class Lecturer {
     private Research leadProject;
     private ArrayList<Research> joinedProject;
 
-    public Lecturer(String name, String rank, Research leadProject, ArrayList<Research> joinedProject) {
+    public Lecturer(String id,String name, String rank, Research leadProject, ArrayList<Research> joinedProject) {
+        this.id = id;
         this.name = name;
         this.rank = rank;
         this.leadProject = leadProject;
         this.joinedProject = joinedProject;
     }
-    public Lecturer() {
-        this.name = "Default";
-        this.rank = "As. Lecturer";
-        this.leadProject = null;
-        this.joinedProject = null;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
