@@ -1,25 +1,43 @@
 package Week1;
 
 public class Student {
-    private String id;
-    private String name;
+    private String studentId;
+    private String fullName;
     private String major;
 
-    public Student(String id, String name, String major) {
-        this.id = id;
-        this.name = name;
+    public Student(String studentId, String fullName, String major) {
+        this.studentId = studentId;
+        this.fullName = fullName;
         this.major = major;
     }
 
-    public boolean setName(String name) {
-        if (name != null && !name.isEmpty()) {
-            this.name = name;
-            return true;
-        }
-        return false;
+    public  Student() {
+        this.studentId = "Default";
+        this.fullName = "Default";
+        this.major = "Default";
     }
 
-    public String getName() {
-        return name;
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
     }
 }

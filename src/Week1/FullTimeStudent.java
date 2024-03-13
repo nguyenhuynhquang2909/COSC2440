@@ -1,13 +1,13 @@
 package Week1;
 
 public class FullTimeStudent extends Student{
-    private Research project;
-    public FullTimeStudent(String id, String name, String major, Research project) {
+    private Project project;
+    public FullTimeStudent(String id, String name, String major, Project project) {
         super(id, name, major);
         this.project = project;
     }
-    private boolean registerResearch(Research research) {
-        if (research != null) {
+    private boolean registerResearch(Project project) {
+        if (project != null) {
             return true;
         }
         return false;

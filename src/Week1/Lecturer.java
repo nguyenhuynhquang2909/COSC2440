@@ -3,35 +3,38 @@ package Week1;
 import java.util.ArrayList;
 
 public class Lecturer {
-    private String id;
-    private String name;
+    private String employeeId;
+    private String fullName;
     private String rank;
-    private Research leadProject;
-    private ArrayList<Research> joinedProject;
 
-    public Lecturer(String id,String name, String rank, Research leadProject, ArrayList<Research> joinedProject) {
-        this.id = id;
-        this.name = name;
+    private Project projectLed;
+
+    private Project[] joinedProjects;
+    // assume the maximum number of projects a lecturer can join at one time is 10
+    private int projectCount = 0;
+
+
+    public Lecturer(String id, String name, String rank) {
+        this.employeeId = id;
+        this.fullName = name;
         this.rank = rank;
-        this.leadProject = leadProject;
-        this.joinedProject = joinedProject;
     }
 
 
-    public String getId() {
-        return id;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getRank() {
@@ -39,37 +42,42 @@ public class Lecturer {
     }
 
     public boolean setRank(String rank) {
-        String[] rankList = {"As. Lecturer", "Lecturer", "Senior Lecturer"};
-        for (String rankEle: rankList) {
-            if (this.rank.equals(rankEle)) {
-                this.rank = rankEle;
-                return true;
-            }
+        String [] rankList = {"Assoc Lecturer" , "Lecturer", "Senior Lecturer"};
+        boolean checked = false;
+        for (String availableRank: rankList){
+            if (availableRank.equals(rank))
+                checked = true;
         }
-        System.out.println("Invalid rank");
-        return false;
-    }
-
-    public Research getLeadProject() {
-        return leadProject;
-    }
-
-    public void setLeadProject(Research leadProject) {
-        this.leadProject = leadProject;
-    }
-
-    public ArrayList<Research> getJoinedProject() {
-        return joinedProject;
-    }
-
-    public void setJoinedProject(ArrayList<Research> joinedProject) {
-        this.joinedProject = joinedProject;
-    }
-
-    public boolean joineProject(Research research) {
-        if (this.joinedProject.contains(research)) {
+        if (checked){
+            this.rank = rank;
             return true;
         }
         return false;
     }
+    public boolean leadProject(Project project) {
+        if (!isLeading() && project.getLeader() == null) {
+            projectLed = project;
+            project.assignLeader(this);
+            return true;
+        }
+        return false;
+    }
+    public boolean joinProject(Project project) {
+        if (projectCount < 0 && project.addMember(this)) {
+            joinedProjects[projectCount++] = project;
+            return true;
+        }
+        return false;
+    }
+    public boolean isLeading() {
+        return projectLed != null;
+    }
+    @Override
+    public String toString() {
+        // String.format() is similar to printf, but it return instead of display
+        return String.format("Id: %s, Name: %s, Rank: %s",
+                employeeId, fullName, rank);
+    }
+
+
 }
