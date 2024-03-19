@@ -1,6 +1,6 @@
 package Week2;
 
-public class Lecturer {
+public class Lecturer implements Researcher{
     private String employeeId;
     private String fullName;
     private String rank;
@@ -11,11 +11,20 @@ public class Lecturer {
     // assume the maximum number of projects a lecturer can join at one time is 10
     private int projectCount = 0;
 
+    public String researchProfile;
+
 
     public Lecturer(String id, String name, String rank) {
         this.employeeId = id;
         this.fullName = name;
         this.rank = rank;
+        this.researchProfile = " ";
+    }
+    public Lecturer() {
+        this.employeeId = "Default";
+        this.fullName = "Default";
+        this.rank = "Default";
+        this.researchProfile = " ";
     }
 
 
@@ -88,4 +97,13 @@ public class Lecturer {
     }
 
 
+    @Override
+    public void setProfile(String profile) {
+        this.researchProfile = this.researchProfile = "Lecturer(" + profile + ")";
+    }
+
+    @Override
+    public String getProfile() {
+        return this.researchProfile;
+    }
 }

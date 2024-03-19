@@ -1,14 +1,17 @@
 package Week2;
 
-public class FullTimeStudent extends Student {
-    private Project project;
+public class FullTimeStudent extends Student implements Researcher {
+    private Project joinedProject;
+    private String researchProfile;
     public FullTimeStudent(String id, String name, String major, Project project) {
         super(id, name, major);
-        this.project = project;
+        this.joinedProject = project;
+        this.researchProfile = " ";
     }
     public FullTimeStudent() {
         super();
-        this.project = null;
+        this.joinedProject = null;
+        this.researchProfile = " ";
     }
 
     public FullTimeStudent(String studentId, String fullName, String major) {
@@ -16,12 +19,26 @@ public class FullTimeStudent extends Student {
     }
 
     public Project getProject() {
-        return project;
+        return joinedProject;
     }
 
     public void setProject(Project project) {
-        this.project = project;
+        this.joinedProject = project;
     }
 
 
+    @Override
+    public boolean joinProject(Project project) {
+        return false;
+    }
+
+    @Override
+    public void setProfile(String profile) {
+        this.researchProfile =  "Student(" + profile + ")";
+    }
+
+    @Override
+    public String getProfile() {
+        return this.researchProfile;
+    }
 }

@@ -1,5 +1,7 @@
 package Week1;
 
+import Week2.Lecturer;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
