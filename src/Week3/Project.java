@@ -28,22 +28,11 @@ public class Project {
 //        if (!isNotFull()) {
 //            return false;
 //        }
-        if (!(newMember instanceof PartTimeStudent)) {
-
-            if (newMember instanceof FullTimeStudent) {
-                ((FullTimeStudent) newMember).setProject(this);
-                memberList.add(newMember);
-
-
-            } else {
-                ((Lecturer) newMember).getJoinedProjects()[((Lecturer) newMember).getProjectCount()] = this;
-                memberList.add(newMember);
-
-            }
-        }
-
-
-        return true;
+       if (memberList.contains(newMember)) {
+           return false;
+       }
+       memberList.add(newMember);
+       return true;
     }
     public void displayMembers() {
         // display leader
@@ -67,5 +56,12 @@ public class Project {
 
     public Lecturer getLeader() {
         return leader;
+    }
+
+    public ArrayList<Researcher> getMember() {
+        return memberList;
+    }
+    public void setMember(Researcher newMember) {
+        memberList.add(newMember);
     }
 }

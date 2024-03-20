@@ -29,6 +29,11 @@ public class FullTimeStudent extends Student implements Researcher {
 
     @Override
     public boolean joinProject(Project project) {
+        if (this.joinedProject == null && project.getMember().contains(this)) {
+            this.joinedProject = project;
+            project.setMember(this);
+            return true;
+        }
         return false;
     }
 

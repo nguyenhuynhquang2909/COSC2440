@@ -1,5 +1,7 @@
 package Week3;
 
+import java.util.ArrayList;
+
 public class Lecturer implements Researcher {
     private String employeeId;
     private String fullName;
@@ -7,9 +9,9 @@ public class Lecturer implements Researcher {
 
     private Project projectLed;
 
-    private Project[] joinedProjects;
+    private ArrayList<Project> joinedProjects;
     // assume the maximum number of projects a lecturer can join at one time is 10
-    private int projectCount = 0;
+//    private int projectCount = 0;
 
     public String researchProfile;
 
@@ -70,9 +72,9 @@ public class Lecturer implements Researcher {
         return false;
     }
     public boolean joinProject(Project project) {
-        if (projectCount < 0 && project.addMember(this)) {
-            joinedProjects[projectCount] = project;
-            projectCount++;
+        if (this.joinedProjects == null && project.getMember().contains(this)) {
+            this.joinedProjects.add(project);
+            project.setMember(this);
             return true;
         }
         return false;
@@ -82,11 +84,11 @@ public class Lecturer implements Researcher {
     }
 
     public int getProjectCount() {
-        return projectCount;
+        return joinedProjects.size();
     }
 
-    public Project[] getJoinedProjects() {
-        return joinedProjects;
+    public ArrayList<Project> getJoinedProjects() {
+        return this.joinedProjects;
     }
 
     @Override
