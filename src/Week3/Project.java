@@ -8,6 +8,7 @@ public class Project {
     private double budget;
     private ArrayList<Researcher> memberList;
     private Lecturer leader;
+
     private final int MAX_MEMBERS = 10;
 //    private int memberCount = 0;
 
@@ -64,4 +65,7 @@ public class Project {
     public void setMember(Researcher newMember) {
         memberList.add(newMember);
     }
+//    public boolean checkLeader(Lecturer leader) {
+//        if (leaders.contains(leader))
+//    }
 }

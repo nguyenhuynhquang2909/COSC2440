@@ -62,7 +62,13 @@ public class SchoolSystem {
         // Must display lecturer1 as a leader and lecturer2 and lecturer3 as members
         lecturer2.joinProject(p1);
         lecturer3.joinProject(p1);
+
+        // Assign a leader for the project
+        p1.assignLeader(lecturer1);
+
+        // Display members of the project
         p1.displayMembers();
+
     }
 
 

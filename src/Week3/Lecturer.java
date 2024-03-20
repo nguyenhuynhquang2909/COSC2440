@@ -1,6 +1,7 @@
 package Week3;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Lecturer implements Researcher {
     private String employeeId;
@@ -20,6 +21,7 @@ public class Lecturer implements Researcher {
         this.employeeId = id;
         this.fullName = name;
         this.rank = rank;
+        this.joinedProjects = new ArrayList<Project>();
         this.researchProfile = " ";
     }
     public Lecturer() {
@@ -27,6 +29,7 @@ public class Lecturer implements Researcher {
         this.fullName = "Default";
         this.rank = "Default";
         this.researchProfile = " ";
+        this.joinedProjects = new ArrayList<Project>();
     }
 
 
@@ -64,7 +67,7 @@ public class Lecturer implements Researcher {
         return false;
     }
     public boolean leadProject(Project project) {
-        if (!isLeading() && project.getLeader() == null) {
+        if (!isLeadingProject() && project.getLeader() == null) {
             projectLed = project;
             project.assignLeader(this);
             return true;
@@ -72,14 +75,14 @@ public class Lecturer implements Researcher {
         return false;
     }
     public boolean joinProject(Project project) {
-        if (this.joinedProjects == null && project.getMember().contains(this)) {
+        if (!project.getMember().contains(this)) {
             this.joinedProjects.add(project);
             project.setMember(this);
             return true;
         }
         return false;
     }
-    public boolean isLeading() {
+    public boolean isLeadingProject() {
         return projectLed != null;
     }
 
@@ -98,6 +101,21 @@ public class Lecturer implements Researcher {
                 employeeId, fullName, rank);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Lecturer lecturer = (Lecturer) obj;
+        return employeeId.equals(lecturer.employeeId);
+    }
 
     @Override
     public void setProfile(String profile) {
@@ -107,5 +125,10 @@ public class Lecturer implements Researcher {
     @Override
     public String getProfile() {
         return this.researchProfile;
+    }
+
+    @Override
+    public String getId() {
+        return employeeId;
     }
 }
