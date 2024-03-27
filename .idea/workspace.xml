@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee2da8f0-a44a-4093-ab9e-7b5407d4dccc" name="Changes" comment="Update ArrayList to manage projects and members">
-      <change afterPath="$PROJECT_DIR$/src/Week3/LeaderSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Week3/ProjectMember.java" afterDir="false" />
+    <list default="true" id="ee2da8f0-a44a-4093-ab9e-7b5407d4dccc" name="Changes" comment="Update problem 2 and 3">
+      <change afterPath="$PROJECT_DIR$/src/Week4/Problem1/DataInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week4/Problem1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week4/Problem1/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week4/Problem1/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week4/Problem1/StudentView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week4/Problem1/StudentViewGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COSC2440_Tutorial/Week2/FullTimeStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COSC2440_Tutorial/Week2/FullTimeStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COSC2440_Tutorial/Week2/Lecturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COSC2440_Tutorial/Week2/Lecturer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week2/Researcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week2/Researcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week3/FullTimeStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week3/FullTimeStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week3/Lecturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week3/Lecturer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week3/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week3/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week3/Researcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week3/Researcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week3/SchoolSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week3/SchoolSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "/Users/nguyenhuynhquang2909/Documents/COSC2440/COSC2440_Tutorial/src/Week3",
+    "last_opened_file_path": "/Users/nguyenhuynhquang2909/Documents/COSC2440/COSC2440_Tutorial/src",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -53,12 +49,25 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Week3" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/Week3" />
       <recent name="$PROJECT_DIR$/src/Week2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Week3.SchoolSystem">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Week4.Problem1.Main" />
+      <module name="COSC2440_Tutorial" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Week4.Problem1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PartTimeStudentTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Week2.PartTimeStudentTest" />
       <extension name="coverage">
@@ -73,19 +82,6 @@
     </configuration>
     <configuration name="SchoolSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Week1.SchoolSystem" />
-      <module name="COSC2440_Tutorial" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Week1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StudentTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Week1.StudentTest" />
       <module name="COSC2440_Tutorial" />
       <extension name="coverage">
         <pattern>
@@ -125,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Week3.SchoolSystem" />
         <item itemvalue="Application.Week2.SchoolSystem" />
         <item itemvalue="Application.SchoolSystem" />
         <item itemvalue="Application.PartTimeStudentTest" />
-        <item itemvalue="Application.StudentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710915494422</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update problem 2 and 3">
+      <created>1710918609924</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710918609924</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +176,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Use List in JCF to manage members" />
     <MESSAGE value="Update ArrayList to manage projects and members" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update ArrayList to manage projects and members" />
+    <MESSAGE value="Update problem 2 and 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 2 and 3" />
   </component>
 </project>
